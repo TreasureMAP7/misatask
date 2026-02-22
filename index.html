@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth scroll-pt-6">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +15,7 @@
   </head>
   <body class="font-poppins">
     <header
-      class="flex bg-main py-2 px-8 justify-between text-white font-semibold sticky top-0 z-50"
+      class="flex bg-main py-3 px-12 justify-between text-white font-semibold sticky top-0 z-50"
     >
       <a href="#" class="text-lg flex">MisaTask</a>
       <nav class="text-sm flex items-center gap-4">
@@ -28,13 +28,13 @@
     </header>
     <main class="flex flex-col">
       <section
-        class="flex justify-between items-center px-8 py-24 bg-linear-180 from-secondary-gradient to-white"
+        class="flex justify-between items-center px-12 py-24 bg-linear-180 from-secondary-gradient to-white"
         id="home"
       >
         <div class="flex flex-col gap-8 justify-start">
           <header class="flex flex-col gap-4">
             <h1 class="font-bold text-7xl text-main-dark">MisaTask</h1>
-            <p class="text-sm">
+            <p class="text-md font-medium">
               Manage any tasks easily whenever and wherever you are.
             </p>
           </header>
@@ -44,71 +44,97 @@
             >Start Organizing</a
           >
         </div>
-        <aside class="group overflow-hidden select-none">
+        <aside class="group overflow-hidden select-none relative">
           <img
             src="src/img/Logo-MisaTask-Rev-01.png"
-            alt="logo.png"
+            alt="logo"
             class="pin w-90 absolute"
           />
           <img
             src="src/img/Logo-MisaTask-Rev-02.png"
-            alt="logo.png"
+            alt="logo"
             class="clock w-90 group-hover:rotate-180 duration-1000"
           />
         </aside>
       </section>
 
-      <section class="carousel" id="features">
-        <div class="left-button">
-          <button><</button>
+      <section class="flex relative items-center" id="features">
+        <button
+          class="absolute left-12 p-2 rounded-full text-white bg-main hover:bg-secondary duration-300 ease-out"
+          onclick="scrollCarousel('left')"
+        >
+          <i data-feather="arrow-left" class="w-8 h-auto"></i>
+        </button>
+        <button
+          class="absolute right-12 p-2 rounded-full text-white bg-main hover:bg-secondary duration-300 ease-out"
+          onclick="scrollCarousel('right')"
+        >
+          <i data-feather="arrow-right" class="w-8 h-auto"></i>
+        </button>
+        <div class="flex gap-3 absolute left-[50%] translate-x-[-50%] bottom-4">
+          <button class="bg-grey-two rounded-full p-3"></button>
+          <button class="bg-grey-two rounded-full p-3"></button>
+          <button class="bg-grey-two rounded-full p-3"></button>
         </div>
-        <div class="right-button">
-          <button>></button>
+        <div
+          class="carousel flex overflow-x-scroll snap-mandatory snap-x [scrollbar-width:none] [&::webkit-scrollbar]:hidden [-ms-overflow-style: none]"
+        >
+          <article
+            class="slide flex flex-col justify-center items-center gap-4 snap-center shrink-0 w-full py-12"
+          >
+            <header class="flex flex-col gap-2">
+              <h2 class="font-bold text-main-dark text-5xl text-center">
+                Stay in Control at a Glance
+              </h2>
+              <p class="text-md font-medium text-center">
+                See your ongoing, overdue, and completed tasks in one clear
+                dashboard.
+              </p>
+            </header>
+            <picture class="w-[70%] select-none">
+              <img src="src/img/dashboard.png" alt="dashboard" />
+            </picture>
+          </article>
+          <article
+            class="slide flex flex-col justify-center items-center gap-4 snap-center shrink-0 w-full py-12 bg-secondary-grey"
+          >
+            <header class="flex flex-col gap-2">
+              <h2 class="font-bold text-main-dark text-5xl text-center">
+                Organize Tasks with Ease
+              </h2>
+              <p class="text-md font-medium text-center">
+                Easily group tasks by project, subject, or priority to keep
+                everything structured.
+              </p>
+            </header>
+            <picture class="w-[70%] select-none">
+              <img src="src/img/folder.png" alt="dashboard" />
+            </picture>
+          </article>
+          <article
+            class="slide flex flex-col justify-center items-center gap-4 snap-center shrink-0 w-full py-12"
+          >
+            <header class="flex flex-col gap-2">
+              <h2 class="font-bold text-main-dark text-5xl text-center">
+                Work Better Together
+              </h2>
+              <p class="text-md font-medium text-center">
+                Invite collaborators, share tasks, and stay aligned with your
+                team real time.
+              </p>
+            </header>
+            <picture class="w-[70%] select-none">
+              <img src="src/img/collaborator.png" alt="dashboard" />
+            </picture>
+          </article>
         </div>
-        <div class="indicator"></div>
-        <article>
-          <header>
-            <h2>Stay in Control at a Glance</h2>
-            <p>
-              See your ongoing, overdue, and completed tasks in one clear
-              dashboard.
-            </p>
-          </header>
-          <picture>
-            <img src="#" alt="dashboard.png" />
-          </picture>
-        </article>
-        <article>
-          <header>
-            <h2>Organize Tasks with Ease</h2>
-            <p>
-              Easily group tasks by project, subject, or priority to keep
-              everything structured.
-            </p>
-          </header>
-          <picture>
-            <img src="#" alt="folder.png" />
-          </picture>
-        </article>
-        <article>
-          <header>
-            <h2>Work Better Together</h2>
-            <p>
-              Invite collaborators, share tasks, and stay aligned with your team
-              real time.
-            </p>
-          </header>
-          <picture>
-            <img src="#" alt="collaborator.png" />
-          </picture>
-        </article>
       </section>
 
       <section
-        class="flex flex-col justify-center items-center bg-linear-180 from-white to-main-gradient py-16 gap-4"
+        class="flex flex-col justify-center items-center bg-linear-180 from-white to-main-gradient py-12 gap-4"
         id="cta"
       >
-        <h2 class="font-bold text-main-dark text-5xl">
+        <h2 class="font-bold text-main-dark text-5xl text-center">
           Ready to Stay Organized with MisaTask?
         </h2>
         <a
@@ -119,7 +145,7 @@
       </section>
 
       <section
-        class="bg-main-gradient flex flex-col justify-start px-8 py-6 gap-6"
+        class="bg-main-gradient flex flex-col justify-start px-12 py-6 gap-6"
         id="faq"
       >
         <h2 class="text-5xl font-bold text-main-dark">FAQs</h2>
@@ -201,7 +227,7 @@
         </div>
       </section>
     </main>
-    <footer class="flex bg-main flex-col text-white px-8 py-4 gap-6">
+    <footer class="flex bg-main flex-col text-white px-12 py-4 gap-6">
       <section class="flex justify-between">
         <div class="flex flex-col justify-between">
           <header>
