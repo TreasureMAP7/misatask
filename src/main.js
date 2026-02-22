@@ -1,15 +1,40 @@
 // Carousel
+const carousel = document.querySelector(".carousel");
+const leftBtn = document.querySelector(".left-btn");
+const rightBtn = document.querySelector(".right-btn");
+const slideWidth = carousel.querySelector(".slide").offsetWidth;
+
+document.addEventListener("DOMContentLoaded", () => {
+  let scrollLeft = carousel.scrollLeft;
+  let scrollWidth = carousel.scrollWidth;
+  let progressLeft = scrollLeft + carousel.clientWidth;
+  if (scrollLeft <= 0) {
+    leftBtn.classList.add("opacity-0", "pointer-events-none");
+  } else if (progressLeft >= scrollWidth - 10) {
+    rightBtn.classList.add("opacity-0", "pointer-events-none");
+  }
+});
+
+carousel.addEventListener("scroll", () => {
+  let scrollLeft = carousel.scrollLeft;
+  let scrollWidth = carousel.scrollWidth;
+  let progressLeft = scrollLeft + carousel.clientWidth;
+  if (scrollLeft <= 10) {
+    leftBtn.classList.add("opacity-0", "pointer-events-none");
+  } else if (progressLeft >= scrollWidth - 10) {
+    rightBtn.classList.add("opacity-0", "pointer-events-none");
+  } else {
+    leftBtn.classList.remove("opacity-0", "pointer-events-none");
+    rightBtn.classList.remove("opacity-0", "pointer-events-none");
+  }
+});
 
 function scrollCarousel(dir) {
-  const carousel = document.querySelector(".carousel");
-  const slideWidth = carousel.querySelector(".slide").offsetWidth;
-  if (dir === 'left') {
-    carousel.scrollBy({ left: -slideWidth, behavior: 'smooth'})
+  if (dir === "left") {
+    carousel.scrollBy({ left: -slideWidth, behavior: "smooth" });
   } else {
-    carousel.scrollBy({ left: slideWidth, behavior: 'smooth'})
+    carousel.scrollBy({ left: slideWidth, behavior: "smooth" });
   }
-  console.log(carousel.offsetWidth);
-  
 }
 
 // FAQs Accordion

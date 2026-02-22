@@ -58,24 +58,24 @@
         </aside>
       </section>
 
-      <section class="flex relative items-center" id="features">
+      <section class="carousel-container flex relative items-center" id="features">
         <button
-          class="absolute left-12 p-2 rounded-full text-white bg-main hover:bg-secondary duration-300 ease-out"
+          class="left-btn absolute left-12 p-2 rounded-full text-white bg-main hover:bg-secondary duration-300 ease-out cursor-pointer"
           onclick="scrollCarousel('left')"
         >
           <i data-feather="arrow-left" class="w-8 h-auto"></i>
         </button>
         <button
-          class="absolute right-12 p-2 rounded-full text-white bg-main hover:bg-secondary duration-300 ease-out"
+          class="right-btn absolute right-12 p-2 rounded-full text-white bg-main hover:bg-secondary duration-300 ease-out cursor-pointer"
           onclick="scrollCarousel('right')"
         >
           <i data-feather="arrow-right" class="w-8 h-auto"></i>
         </button>
-        <div class="flex gap-3 absolute left-[50%] translate-x-[-50%] bottom-4">
+        <!-- <div class="flex gap-3 absolute left-[50%] translate-x-[-50%] bottom-4">
           <button class="bg-grey-two rounded-full p-3"></button>
           <button class="bg-grey-two rounded-full p-3"></button>
           <button class="bg-grey-two rounded-full p-3"></button>
-        </div>
+        </div> -->
         <div
           class="carousel flex overflow-x-scroll snap-mandatory snap-x [scrollbar-width:none] [&::webkit-scrollbar]:hidden [-ms-overflow-style: none]"
         >
